@@ -11,7 +11,7 @@ Install all dependencies
 npm install
 ```
 Then, build the files
-````
+```
 npm run build
 ```
 Finally, it's ready to go!
