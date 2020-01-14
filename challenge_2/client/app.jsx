@@ -50,7 +50,7 @@ class App extends React.Component {
       .then(res => {
         let price = '$' + res.bpi[curr].rate;
         if (curr === 'CAD') {
-          price = '$' + res.bpi[curr].rate + curr;
+          price = '$' + res.bpi[curr].rate + ' ' + curr;
         } else if (curr === 'EUR') {
           price = '€' + res.bpi[curr].rate;
         } else if (curr === 'GBP') {
