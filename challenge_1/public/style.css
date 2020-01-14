@@ -1,0 +1,41 @@
+th {
+  text-align: center;
+}
+
+td, th {
+  word-break: break-word;
+  padding: 5px;
+}
+
+tr {
+  background-color: rgb(80, 80, 80);
+  color: white;
+}
+
+table {
+  margin-top: 10px;
+}
+
+#app, .bigtitle {
+  font-family: arial;
+}
+
+.bigtitle {
+  text-align: center;
+  background-color: rgb(80, 80, 80);
+  color: white;
+  margin: 0;
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
+
+.eventBox {
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+.date {
+  vertical-align: top;
+  width: 100px;
+  text-align: center;
+}
