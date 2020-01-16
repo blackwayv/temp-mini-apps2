@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/blackwayv/temp-mini-apps2/issues"
   },
-  "homepage": "https://github.com/blackwayv/temp-mini-apps2#readme",
+  "homepage": "https://github.com/blackwayv/temp-mini-apps2.git",
   "devDependencies": {
     "@babel/core": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
