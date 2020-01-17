@@ -28,9 +28,7 @@ class App extends React.Component {
     let bowl;
     let playerString = 'player' + (state.player + 1);
     if (state[playerString].length === 10) {
-      this.setState({
-        status: `Player with highest score won!`
-      });
+      this.setState({ winner: true });
     } else if (state.score.length === 3 || state.score[0] + state.score[1] < 10) {
       let i = state.player;
       if (state.playerNames[i + 1] === undefined) {
@@ -47,7 +45,6 @@ class App extends React.Component {
       // logic for last frame 3 SHOTS
       if (state.score[0] === 10 && state.score[1] < 10) {
         bowl = Math.round(Math.random() * (10 - state.score[1]));
-        console.log(bowl);
         let status;
         if (bowl + state.score[0] === 10) {
           status = state.playerNames[state.player] + ' scored a SPARE!';
@@ -62,7 +59,6 @@ class App extends React.Component {
         });
       } else if (state.score[0] === 10 || state.score[0] + state.score[1] === 10) {
         bowl = Math.round(Math.random() * 10);
-        console.log(bowl);
         let status;
         if (bowl === 10) {
           status = state.playerNames[state.player] + ' scored a STRIKE!';
@@ -77,7 +73,6 @@ class App extends React.Component {
         });
       } else {
         bowl = Math.round(Math.random() * (10 - state.score[0]));
-        console.log(bowl);
         let status;
         if (bowl + state.score[0] === 10) {
           status = state.playerNames[state.player] + ' scored a SPARE!';
@@ -107,7 +102,6 @@ class App extends React.Component {
     } else if (state.score[0]) {
       // if second turn of frame
       bowl = Math.round(Math.random() * (10 - state.score[0]));
-      console.log(bowl);
       let status;
       if (bowl + state.score[0] === 10) {
         status = state.playerNames[state.player] + ' scored a SPARE!';
@@ -123,7 +117,6 @@ class App extends React.Component {
     } else {
       // if first turn of frame
       bowl = Math.round(Math.random() * 10);
-      console.log(bowl);
       let status;
       if (bowl === 10) {
         status = state.playerNames[state.player] + ' scored a STRIKE!';
@@ -151,9 +144,22 @@ class App extends React.Component {
           <div className='game'>
             {this.state.status}<br />
             {this.state.playerNames[this.state.player] + "'s turn"}<br />
-            <button onClick={this.go}>GO!</button>
+            <button className='big' onClick={this.go}>GO!</button><br />
+            <button onClick={(e) => {
+              this.setState({
+                player: 0,
+                playerNames: [],
+                status: 'Press GO! to start the game!',
+                player1: [],
+                player2: [],
+                player3: [],
+                player4: [],
+                player5: [],
+                score: [],
+                winner: false
+              })}}>New Game</button>
             <PinsView />
-            <ScoreBoard state={this.state} />
+            <ScoreBoard state={this.state} update={this.updateState} />
           </div>}
       </div>
     );

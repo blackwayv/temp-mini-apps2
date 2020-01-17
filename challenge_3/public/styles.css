@@ -1,5 +1,30 @@
+.bowling {
+  font-family: Helvetica;
+}
+
 td, th {
   border: 1px solid black;
-  min-width: 50px;
-  min-height: 50px;
+  width: 90px;
+  min-width: 75px;
+  font-size: 20px;
+}
+
+td {
+  width: 75px;
+  height: 75px;
+  padding-top: 15px;
+  padding-left: 15px;
+  vertical-align: top;
+}
+
+#playercell {
+  max-width: 200px;
+  padding: 5px;
+  vertical-align: middle;
+}
+
+.big {
+  width: 100px;
+  height: 66px;
+  font-size: 32px;
 }
